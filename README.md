@@ -1,4 +1,4 @@
-# Robotics Club, IIT-BHU – Week 2 Submission
+# WELCOME
 
 This repository contains my work for Week 2 of the IIT-BHU Robotics Club. It features a variety of robotics tasks, including simulation, modeling, and CAD design:
 
