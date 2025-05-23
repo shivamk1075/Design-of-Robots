@@ -1,6 +1,6 @@
 # WELCOME
 
-This repository contains my work for Week 2 of the IIT-BHU Robotics Club. It features a variety of robotics tasks, including simulation, modeling, and CAD design:
+This repository contains my work for CAD week of the IIT-BHU Robotics Club. It features a variety of robotics tasks, including simulation, modeling, and CAD design:
 
 - [`line_follower.py`](./line_follower.py): Python code for a PID-controlled line follower robot using PyBullet simulation. Start/reset the simulation with keyboard input.
 - URDF/XACRO models: [robot arms](./Final%20task/Robotics.xacro) (object transfer arm), [bonus bot](./Task1_bonus/task1b.urdf), [task1 bot](./Task1_urdf/task1.urdf) for use in ROS/Gazebo.
