@@ -1,0 +1,239 @@
+<robot name="bot">
+<material name="amz">
+        <color rgba="0.0 0.0 1.0 1.0"/>
+</material>
+<link name="base_link">
+  <visual>
+    <geometry>
+      <box size="0.8 0.7 0.1" />
+    </geometry>
+    <material name="Lightgrey">
+      <color rgba="1.0 0.0 0.0 1.0"/>
+    </material>
+  </visual>
+  <collision>
+    <geometry>
+      <box size="1.0 1.0 1.0" />
+      <cylinder radius="1.0" length="1.0"/>
+    </geometry>
+  </collision>
+  <inertial>
+    <mass value="1.0"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+</link>
+<link name="base_footprint" />
+<joint name="base_joint" type="fixed">
+  <parent link="base_footprint"/>
+  <child link="base_link"/>
+  <origin xyz="0 0 0.135" rpy="0 0 0"/>
+  <axis xyz="0 0 0"/>
+</joint>
+
+<!--front left wheel link -->
+  <link name="front_left_wheel_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.1" length="0.03"/>
+      </geometry>
+      <material name="amz" />
+    </visual>
+    <inertial>
+    <mass value="0.5"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  </link>
+<joint name="front_left_wheel_joint" type="continuous">
+  <parent link="base_link"/>
+  <child link="front_left_wheel_link"/>
+  <origin xyz="0.25 0.4 0.0" rpy="1.57 0 0"/>
+  <axis xyz="0 0 1"/>
+</joint>
+
+<!--front right wheel link -->
+  <link name="front_right_wheel_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.1" length="0.03"/>
+      </geometry>
+      <material name="amz"/>
+    </visual>
+    <inertial>
+    <mass value="0.5"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  </link>
+<joint name="front_right_wheel_joint" type="continuous">
+  <parent link="base_link"/>
+  <child link="front_right_wheel_link"/>
+  <origin xyz="0.25 -0.4 0.0" rpy="1.57 0 0"/>
+  <axis xyz="0 0 1"/>
+</joint>
+
+<!--Rear left wheel link -->
+  <link name="rear_left_wheel_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.1" length="0.03"/>
+      </geometry>
+      <material name="amz" />
+    </visual>
+    <inertial>
+    <mass value="0.5"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  </link>
+<joint name="rear_left_wheel_joint" type="continuous">
+  <parent link="base_link"/>
+  <child link="rear_left_wheel_link"/>
+  <origin xyz="-0.25 0.4 0.0" rpy="1.57 0 0"/>
+  <axis xyz="0 0 1"/>
+</joint>
+
+<!--Rear right wheel link -->
+  <link name="rear_right_wheel_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.1" length="0.03"/>
+      </geometry>
+      <material name="amz"/>
+    </visual>
+    <inertial>
+    <mass value="0.5"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  </link>
+<joint name="rear_right_wheel_joint" type="continuous">
+  <parent link="base_link"/>
+  <child link="rear_right_wheel_link"/>
+  <origin xyz="-0.25 -0.4 0.0" rpy="1.57 0 0"/>
+  <axis xyz="0 0 1"/>
+</joint>
+
+<link name="driver">
+  <visual>
+    <geometry>
+      <box size="0.25 0.25 0.25" />
+      </geometry>
+    <material name="LightGrey">
+      <color rgba="0.7 0.7 0.7 1.0"/>
+    </material>
+  </visual>
+</link>
+<joint name="driver_base" type="continuous">
+  <parent link="base_link"/>
+  <child link="driver"/>
+  <axis xyz="0 0 1.0"/>
+  <origin xyz="0 0 0.135" rpy="0 0 0"/>
+</joint>
+<link name="Rod1">
+  <visual>
+    <geometry> 
+      <box size="0.02 1.0 0.01" />
+    </geometry>
+    <material name="amzq">
+      <color rgba="0.0 0.0 1.0 1.0"/>
+    </material>
+     <inertial>
+    <mass value="1.0"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="2.0"/>
+    </inertial>
+  </visual>
+</link>
+<link name="Disc1">
+  <visual>
+    <geometry>
+      <cylinder radius="0.05" length="0.05"/>
+    </geometry>
+    <material name="LightGrey">
+      <color rgba="0.7 0.7 0.7 1.0"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="driver_disc1" type="continuous">
+  <parent link="driver"/>
+  <child link="Disc1"/>
+  <axis xyz="0 0 1"/>
+  <origin xyz="0 0 0.135" rpy="0 1.57 0"/>
+</joint>
+
+<joint name="disc1_rod1" type="fixed">
+  <parent link="Disc1"/>
+  <child link="Rod1"/>
+  <origin xyz="-0.05 -0.5 0.0" rpy="0.0 0.0 0.0"/>
+</joint>
+<link name="Disc2">
+  <visual>
+    <geometry>
+      <cylinder radius="0.05" length="0.05"/>
+    </geometry>
+    <material name="LightGrey">
+      <color rgba="0.7 0.7 0.7 1.0"/>
+    </material>
+  </visual>
+</link>
+<link name="Rod2">
+  <visual>
+    <geometry> 
+      <box size="0.02 1.0 0.01" />
+    </geometry>
+    <material name="amzq">
+      <color rgba="0.0 0.0 1.0 1.0"/>
+    </material>
+     <inertial>
+    <mass value="1.0"/>
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="2.0"/>
+    </inertial>
+  </visual>
+</link>
+<joint name="rod1_disc2" type="continuous">
+  <parent link="Rod1"/>
+  <child link="Disc2"/>
+  <axis xyz="0 0 1"/>
+  <origin xyz="0.0 -0.5 0.0" rpy="0 0 0"/>
+</joint>
+<joint name="disc2_rod2" type="fixed">
+  <parent link="Disc2"/>
+  <child link="Rod2"/>
+  <origin xyz="-0.05 -0.5 0.0" rpy="0.0 0.0 0.0"/>
+</joint>
+<link name="Disc3">
+  <visual>
+    <geometry>
+      <cylinder radius="0.05" length="0.05"/>
+    </geometry>
+    <material name="LightGrey">
+      <color rgba="0.7 0.7 0.7 1.0"/>
+    </material>
+  </visual>
+</link>
+<link name="plate">
+  <visual>
+    <geometry> 
+      <box size="0.25 0.04 0.5" />
+    </geometry>
+    <material name="LightGrey">
+      <color rgba="1 1 0 1.0"/>
+    </material>
+  </visual>
+</link>
+<joint name="rod2_disc3" type="continuous">
+  <parent link="Rod2"/>
+  <child link="Disc3"/>
+  <axis xyz="0 0 1"/>
+  <origin xyz="0.0 -0.5 0.0" rpy="0 0 0"/>
+</joint>
+<joint name="disc3_plate" type="fixed">
+  <parent link="Disc3"/>
+  <child link="plate"/>
+  <origin xyz="-0.05 -0.02 0.0" rpy="0.0 0.0 0.0"/>
+</joint>
+</robot>
